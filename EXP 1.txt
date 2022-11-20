@@ -1,0 +1,59 @@
+1) A)AREA OF TRIANGLE-
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Area of triangle</title>
+</head>
+<body>
+<h3>Area of triangle</h3>
+<script type ="text/javascript">
+var b=5,h=3,area;
+var area=1/2*b*h;
+document.write("Area of triangle"+area);
+confirm("Area of triangle"+area);
+</script>
+</body>
+</html>
+
+2) b) AREA OF RECTANGLE-
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale-1.0">
+<title>Document</title>
+</head>
+<body>
+
+<script type="text/javascript">
+var L=4,W=3, area;
+var area=L*W;
+document.write("Area recangle"+area); confirm("Area of recangle"+area);
+</script>
+</body>
+</html>
+
+3) c)AREA OF CIRCLE-
+
+<DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"> 
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+</head>
+<body>
+<h3>Area of Circle</h3>
+<script type="text/javascript">
+var pi=3.14,r=3, area;
+var area=pi*r*r;
+document.write("Area of circle"+area);
+confirm("Area of circle"+area);
+</script>
+</body>
+</html>
+

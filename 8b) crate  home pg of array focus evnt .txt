@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>exp8</title>
+</head>
+
+<body>
+  Enter your name: <input type="text" onfocus="myFunction(this)">
+
+  <h1 id="demo" onmouseover="mouseOver()" onmouseout="mouseOut()">Mouse over me</h1>
+
+  <script type="text/javascript">
+    function myFunction(x) {
+      x.style.background = "yellow";
+    }
+
+    function mouseOver() {
+      document.getElementById("demo").style.color = "red";
+    }
+
+    function mouseOut() {
+      document.getElementById("demo").style.color = "black";
+    }
+  </script>
+
+</body>
+ 
+</html>

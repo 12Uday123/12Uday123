@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<script type ="text/javascript">
+myfun();
+function myfun(){
+var string1 =prompt("enter string");
+var string2 =prompt("enter string");
+//if(string1 ===string2){
+if(string1.toUpperCase()===string2.toUpperCase()){
+document.write("they are equal");
+}
+//}
+else{
+document.write("they are not equal");
+}
+}
+</script>
+</body>
+</html>

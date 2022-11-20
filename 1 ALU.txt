@@ -1,0 +1,134 @@
+EXP 1  ALU
+VHDL Module Code :
+
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.STD_LOGIC_ARITH.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
+use IEEE.NUMERIC_STD.ALL;
+-- Uncomment the following library declaration if using
+-- arithmetic functions with Signed or Unsigned values
+--use IEEE.NUMERIC_STD.ALL;
+-- Uncomment the following library declaration if instantiating
+-- any Xilinx primitives in this code.
+--library UNISIM;
+--use UNISIM.VComponents.all;
+entity alu is
+ Port ( a : in STD_LOGIC_VECTOR (3 downto 0);
+ b : in STD_LOGIC_VECTOR (3 downto 0);
+ c : out STD_LOGIC_VECTOR (3 downto 0);
+ ch : in STD_LOGIC_VECTOR (2 downto 0));
+end alu;
+architecture Behavioral of alu is
+begin
+process(a,b,ch)
+begin
+case ch is
+when "000" =>
+c<= a + b;
+when "001" =>
+c<= a - b;
+when "010" =>
+c<= a and b; 
+when "011" =>
+c<= a nand b;
+when "100" =>
+c<= a or b;
+when "101" =>
+c<= a xor b;
+when "110" =>
+c<= a xnor b ;
+when "111" =>
+c<= a nor b;
+when others =>
+NULL;
+end case;
+end process;
+end Behavioral;
+
+Test Bench Code:
+
+LIBRARY ieee;
+USE ieee.std_logic_1164.ALL;
+-- Uncomment the following library declaration if using
+-- arithmetic functions with Signed or Unsigned values
+--USE ieee.numeric_std.ALL;
+ENTITY alu_tb IS
+END alu_tb;
+ARCHITECTURE behavior OF alu_tb IS 
+ -- Component Declaration for the Unit Under Test (UUT)
+ COMPONENT alu
+ PORT(
+ a : IN std_logic_vector(3 downto 0);
+ b : IN std_logic_vector(3 downto 0);
+ c : OUT std_logic_vector(3 downto 0);
+ ch : IN std_logic_vector(2 downto 0)
+ );
+ END COMPONENT;
+--Inputs
+ signal a : std_logic_vector(3 downto 0) := (others => '0');
+ signal b : std_logic_vector(3 downto 0) := (others => '0');
+ signal ch : std_logic_vector(2 downto 0) := (others => '0');
+--Outputs
+ signal c : std_logic_vector(3 downto 0);
+ -- No clocks detected in port list. Replace <clock> below with 
+ -- appropriate port name 
+ --constant <clock>_period : time := 10 ns;
+BEGIN
+-- Instantiate the Unit Under Test (UUT)
+ uut: alu PORT MAP (
+ a => a,
+ b => b,
+ c => c,
+ ch => ch
+ );
+ -- Clock process definitions
+-- <clock>_process :process
+-- begin
+-- <clock> <= '0';
+-- wait for <clock>_period/2;
+-- <clock> <= '1';
+-- wait for <clock>_period/2;
+-- end process;
+--
+ -- Stimulus process
+ stim_proc: process
+ begin
+ -- hold reset state for 100 ns.
+ 
+a <= "0001";
+b <= "0010";
+ 
+ch<= "000";
+wait for 100 ns;
+a <= "0001";
+b <= "0010";
+ch<= "001";
+wait for 100 ns;
+a <= "0001";
+b <= "0010";
+ch<= "010";
+wait for 100 ns;
+a <= "0001";
+b <= "0010";
+ch<= "011";
+wait for 100 ns;
+a <= "0001";
+b <= "0010";
+ch<= "100";
+wait for 100 ns;
+a <= "0001";
+b <= "0010";
+ch<= "101";
+wait for 100 ns;
+a <= "0001";
+b <= "0010";
+ch<= "110";
+wait for 100 ns;
+a <= "0001";
+b <= "0010";
+ch<= "111";
+end process;
+--wait for <clock>_period*10;
+ -- insert stimulus here 
+END;

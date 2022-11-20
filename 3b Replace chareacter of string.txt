@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<script type="text/javascript">
+    var string = 'Mr Red has a red car a red bike!!!';
+document.write(string);
+var reg =new RegExp('Red','gi');
+var newString =string.replace('Red','blue');
+document.write(newString);
+</script>
+<body>
+<html>
